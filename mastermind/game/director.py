@@ -2,19 +2,19 @@
 
 from game.board import Board  
 
- """This imports all console from game.console"""
+"""This imports all console from game.console"""
 from game.console import Console 
 
- """This imports allnumber of players from game.player"""
+"""This imports allnumber of players from game.player"""
 from game.player import Player
 
 """This imports all roster code from game.roster"""
 from game.roster import Roster  
 
- """This imports check codes from game.check"""
+"""This imports check codes from game.check"""
 from game.check import Check    
 
- """This imports  clear screen from game.clear_screen"""
+"""This imports  clear screen from game.clear_screen"""
 from game.board import Board
 from game.console import Console
 from game.player import Player
