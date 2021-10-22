@@ -1,3 +1,20 @@
+"""This imports all codes from board.py"""
+
+from game.board import Board  
+
+ """This imports all console from game.console"""
+from game.console import Console 
+
+ """This imports allnumber of players from game.player"""
+from game.player import Player
+
+"""This imports all roster code from game.roster"""
+from game.roster import Roster  
+
+ """This imports check codes from game.check"""
+from game.check import Check    
+
+ """This imports  clear screen from game.clear_screen"""
 from game.board import Board
 from game.console import Console
 from game.player import Player
@@ -59,6 +76,7 @@ class Director:
         
         Args:
             self (Director): An instance of Director.
+            the for loop below asks for name of player and lists them on the board.
         """
         for n in range(self.__number_of_players):
             name = self.__console.read(f"Enter a name for player {n + 1}: ")
