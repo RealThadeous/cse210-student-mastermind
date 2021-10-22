@@ -15,8 +15,9 @@ class Board:
         
         Args:
             self (Board): an instance of Board.
+        
         Attributes:
-            items: dictionary
+            _items: dictionary
         """
         self._items = {}
         
@@ -27,9 +28,12 @@ class Board:
         Args:
             self (Board): an instance of Board.
             player (): contains player data
+        
         Attributes:
             name: variable to store player input
-            code(string): holds random number between 1000 - 10000 
+            code (string): Holds random number between 1000 - 9999
+            guess (string): A string with the player's guess.
+            hint (string): A string with the player's hint.
         """
         name = player
         code = str(random.randint(1000, 10000))
@@ -40,10 +44,12 @@ class Board:
 
     def _create_hint(self, code, guess):
         """Generates a hint based on the given code and guess.
+        
         Args:
             self (Board): An instance of Board.
             code (string): The code to compare with.
             guess (string): The guess that was made.
+        
         Returns:
             string: A hint in the form [xxxx]
         """
@@ -59,20 +65,27 @@ class Board:
 
 
     def apply_hint(self, player, hint):
-        """The apply method applies a hint to the playing surface. 
+        """The apply_hint method applies a hint to the
+        corresponding player.
+        
         Args:
-            self(Board): an instance of Board.
-            player(string): contains player data
-            hint (string): hint for the player
+            self (Board): An instance of Board.
+            player(string): Contains player data.
+            hint (string): Hint for the player.
         """
         self._items[player][2] = hint
         
     
     def _is_same_code(self, player):
-        """checks if the player data is the same
+        """checks if the player's guess is the same
+        as the secret code.
+        
         Args:
-            self(Board): an instance of board
-            player(string): contains player data
+            self(Board): An instance of Board.
+            player(string): Contains player data.
+        
+        Returns:
+            True/False (boolean): 
         """                         
 
         if self._items[player][0] == self._items[player][1]:
@@ -84,8 +97,12 @@ class Board:
     def to_string(self):
         """The to_string method converts the board data to its 
         string representation and returns it to the caller.
+        
         Args:
             self (Board): an instance of Board.
+
+        Returns:
+            board(string): A string with the data to display.
         """
         line, text, board = "", "", ""
         for item in self._items:
