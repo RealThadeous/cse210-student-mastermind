@@ -46,11 +46,11 @@ class Check:
         """
         for digit in guess:
             if not digit.isdigit():
-                print("\nHint: Only digits accepted.")
+                print("\nHint: Only digits accepted.", end = "")
                 return not self.__okay
 
         if len(guess) != 4:
-            print(f"\nHint: You must enter 4 digits.")
+            print(f"\nHint: You must enter 4 digits.", end = "")
             return not self.__okay
 
         return self.__okay
