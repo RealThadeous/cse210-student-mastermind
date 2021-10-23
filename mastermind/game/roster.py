@@ -27,6 +27,9 @@ class Roster:
         """
         if player not in self.players:
             self.players.append(player)
+            return True
+        else:
+            return False
 
     def get_current(self):
         """Gets the current player object.
