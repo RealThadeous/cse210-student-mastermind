@@ -46,5 +46,3 @@ class Console:
             text (integer): The four digits number(required) to display as a text.
         """
         print(text)
-
-        

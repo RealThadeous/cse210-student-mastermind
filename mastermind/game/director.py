@@ -66,12 +66,12 @@ class Director:
         """
         while True:
             self.__cls.clear_screen()
-            self.__console.write(self.__intro._info)
+            self.__console.write(self.__intro.info)
             self.number_of_players = self.__console.read("How many players (1-10)? ")
             if self.number_of_players.isdigit() and int(self.number_of_players) > 0 and int(self.number_of_players) < 11:
                 break
             else:
-                print("You must enter a number between 1 and 10.")
+                self.__console.write("You must enter a number between 1 and 10.")
 
         for n in range(int(self.number_of_players)):
             name = self.__console.read(f"Enter a name for player {n + 1}: ")
@@ -93,7 +93,7 @@ class Director:
 
         while True:
             self.__cls.clear_screen()
-            self.__console.write(self.__intro._info)
+            self.__console.write(self.__intro.info)
             self.__console.write(board)
             self.__console.write(f"{player}'s turn:")
             guess = self.__console.read("What is your guess? ")
@@ -101,7 +101,7 @@ class Director:
                 break
 
         code = self._board._items[player][0]
-        self._player._counter += 1
+        self._player.counter += 1
 
         self._hint = self._board._create_hint(code, guess)
         self._board._items[player] = [str(code), str(guess), self._hint]
@@ -127,6 +127,6 @@ class Director:
         if self.__check._compare_codes(self.__roster.get_current(), self._board):
             winner = self.__roster.get_current()
             print(f"\n{winner} won!")
-            print(f"\n{winner} guessed the code in {self._player._counter} tries, and becoming a Mastermind!\n")
+            print(f"\n{winner} guessed the code in {self._player.counter} tries, and becoming a Mastermind!\n")
             self.__keep_playing = False
         self.__roster.next_player()

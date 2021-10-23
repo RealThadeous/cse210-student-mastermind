@@ -13,7 +13,7 @@ class Intro():
         Args:
             self (Intro): an instance of Intro.
         """
-        self._info = "Mastermind is a game in which each player seeks to guess the secret\n\
+        self.info = "Mastermind is a game in which each player seeks to guess the secret\n\
 code they've been assigned before the other players do.\n\n\
     Rules of the game:\n\
     1. The code is a randomly generated, four digit number between 1000 and 9999.\n\
@@ -27,8 +27,8 @@ code they've been assigned before the other players do.\n\n\
 
         @property
         def info(self):
-            return self._info
+            return self.__info
 
         @info.setter
         def info(self, info):
-            self._info = info
+            self.__info = info
