@@ -74,10 +74,14 @@ class Director:
                 self.__console.write("You must enter a number between 1 and 10.")
 
         for n in range(int(self.number_of_players)):
-            name = self.__console.read(f"Enter a name for player {n + 1}: ")
-            self._player = Player()
-            self.__roster.add_player(name)
-            self._board._prepare(name)
+            while True:
+                name = self.__console.read(f"Enter a name for player {n + 1}: ")
+                self._player = Player()
+                if self.__roster.add_player(name):
+                    self._board._prepare(name)
+                    break
+                else:
+                    self.__console.write("\nName already in the list.")
 
     def _get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
