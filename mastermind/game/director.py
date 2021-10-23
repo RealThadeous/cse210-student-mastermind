@@ -81,7 +81,7 @@ class Director:
                     self._board._prepare(name)
                     break
                 else:
-                    self.__console.write("\nName already in the list.")
+                    self.__console.write(f"\nName:{name} already in the list.")
 
     def _get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
