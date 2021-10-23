@@ -71,7 +71,7 @@ class Director:
             if self.number_of_players.isdigit() and int(self.number_of_players) > 0 and int(self.number_of_players) < 11:
                 break
             else:
-                print("You must enter a number between 1 and 10.")
+                self.__console.write("You must enter a number between 1 and 10.")
 
         for n in range(int(self.number_of_players)):
             name = self.__console.read(f"Enter a name for player {n + 1}: ")
